@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>บทความ – TechHub</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500&family=IBM+Plex+Sans+Thai:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="dashboard">
+<header class="topbar">
+  <a class="brand" href="dashboard.html">TechHub</a>
+  <nav><button id="logout" class="btn btn-ghost" type="button">ออกจากระบบ</button></nav>
+</header>
+<main class="wrap wrap-wide">
+  <section class="card">
+    <h1 id="hello">สวัสดี</h1>
+    <p id="who" class="who"></p>
+    <div id="msg" class="msg" role="alert" hidden></div>
+    <div id="chips" class="chips" role="group" aria-label="กรองตามหมวด"></div>
+    <div id="articles" class="list"></div>
+  </section>
+</main>
+<script type="module" src="js/app.js"></script>
+</body>
+</html>

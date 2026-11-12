@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>เข้าสู่ระบบ – TechHub</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500&family=IBM+Plex+Sans+Thai:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="login">
+<header class="topbar"><a class="brand" href="index.html">TechHub</a></header>
+<main class="wrap">
+  <section class="card">
+    <h1>เข้าสู่ระบบ</h1>
+    <p class="lead">เข้าสู่ระบบเพื่ออ่านบทความทั้งหมด</p>
+    <form id="login-form" novalidate>
+      <label for="email">อีเมล</label>
+      <input id="email" name="email" type="email" autocomplete="email" required>
+
+      <label for="password">รหัสผ่าน</label>
+      <input id="password" name="password" type="password" autocomplete="current-password" required>
+
+      <div id="msg" class="msg" role="alert" hidden></div>
+      <button id="submit" class="btn btn-block" type="submit">เข้าสู่ระบบ</button>
+    </form>
+    <p class="alt"><button id="forgot" class="link-btn" type="button">ลืมรหัสผ่าน</button></p>
+    <p class="alt">ยังไม่มีบัญชี? <a href="register.html">สมัครสมาชิก</a></p>
+  </section>
+</main>
+<script type="module" src="js/app.js"></script>
+</body>
+</html>
