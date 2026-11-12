@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>หลังบ้าน – TechHub</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500&family=IBM+Plex+Sans+Thai:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="admin">
+<header class="topbar">
+  <a class="brand" href="dashboard.html">TechHub <span class="tag">admin</span></a>
+  <nav>
+    <a class="btn btn-ghost" href="dashboard.html">กลับหน้าบทความ</a>
+    <button id="logout" class="btn btn-ghost" type="button">ออกจากระบบ</button>
+  </nav>
+</header>
+<main class="wrap wrap-xl">
+  <div id="msg" class="msg" role="alert" hidden></div>
+
+  <section class="card" aria-labelledby="h-stats">
+    <h1 id="h-stats">ยอดผู้สมัคร</h1>
+    <div id="stats" class="stats"></div>
+  </section>
+
+  <div class="two-col">
+    <section class="card" aria-labelledby="h-day">
+      <h2 id="h-day">ผู้สมัครรายวัน (14 วันล่าสุด)</h2>
+      <div id="bars" class="bars" role="img" aria-label="กราฟแท่งจำนวนผู้สมัครรายวัน"></div>
+    </section>
+    <section class="card" aria-labelledby="h-int">
+      <h2 id="h-int">ตามหมวดที่สนใจ</h2>
+      <div id="interests"></div>
+    </section>
+  </div>
+
+  <section class="card" aria-labelledby="h-users">
+    <h2 id="h-users">รายชื่อผู้สมัคร</h2>
+    <div class="toolbar">
+      <label class="sr" for="search">ค้นหา</label>
+      <input id="search" type="search" placeholder="ค้นหาชื่อ ชื่อผู้ใช้ หรืออีเมล">
+      <button id="export" class="btn btn-ghost" type="button">ดาวน์โหลด CSV</button>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr>
+          <th>ชื่อ-นามสกุล</th><th>ชื่อผู้ใช้</th><th>อีเมล</th><th>หมวดที่สนใจ</th>
+          <th>สมัครเมื่อ</th><th>เข้าล่าสุด</th><th>ยืนยันอีเมล</th>
+        </tr></thead>
+        <tbody id="rows"></tbody>
+      </table>
+    </div>
+    <p id="count" class="hint"></p>
+  </section>
+</main>
+<script type="module" src="js/admin.js"></script>
+</body>
+</html>

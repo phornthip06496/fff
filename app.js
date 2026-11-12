@@ -125,6 +125,8 @@ async function initDashboard() {
     location.href = "login.html";
   });
 
+  supabase.rpc("is_admin").then(({ data: ok }) => { if (ok) $("admin-link").hidden = false; });
+
   const { data: profile } = await supabase.from("profiles").select("*").eq("id", data.session.user.id).single();
   $("hello").textContent = `สวัสดี ${profile?.full_name || profile?.username || data.session.user.email}`;
   $("who").textContent = profile ? `@${profile.username}` : data.session.user.email;

@@ -25,6 +25,17 @@ supabase/schema.sql  ตาราง + RLS + trigger + ข้อมูลตั�
    - GitHub Pages: `https://USERNAME.github.io/REPO/`
 5. (ทางเลือก) **Authentication → Providers → Email** ปิด *Confirm email* ถ้าต้องการให้สมัครแล้วเข้าได้ทันทีระหว่างพัฒนา
 
+## หน้าแอดมิน (admin.html)
+แสดงยอดผู้สมัคร (วันนี้ / 7 / 30 วัน / ทั้งหมด) กราฟรายวัน สัดส่วนตามหมวด รายชื่อละเอียด ค้นหา และดาวน์โหลด CSV
+1. รัน `supabase/admin.sql` ใน SQL Editor (ถ้ายังไม่ได้รัน)
+2. สมัครสมาชิกผ่านหน้าเว็บด้วยอีเมลของคุณก่อน
+3. ตั้งเป็นแอดมินใน SQL Editor:
+```sql
+insert into public.admins (user_id)
+select id from auth.users where email = 'อีเมลของคุณ@example.com';
+```
+ปุ่ม “หลังบ้าน” จะโผล่ในหน้าบทความเฉพาะแอดมิน สิทธิ์ตรวจที่ฐานข้อมูล คนทั่วไปเรียก `admin_*` ไม่ได้แม้รู้ URL
+
 ## รันในเครื่อง
 ต้องเปิดผ่านเซิร์ฟเวอร์ ห้ามดับเบิลคลิกไฟล์ (ES module ไม่ทำงานบน file://)
 ```bash
